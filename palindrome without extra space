@@ -1,0 +1,44 @@
+String str="race car";
+		int i=0,j=str.length()-1;
+		int count=0;
+		int ansCount=0;
+		for(int k=0;k<str.length();k++)
+		{
+			if(str.charAt(k)>='a' && str.charAt(k)<='z')
+			{
+				count++;
+			}
+		}
+		
+		while(i<j)
+		{
+			if(!(str.charAt(i)>='a' && str.charAt(i)<='z'))
+			{
+				i++;
+				continue;
+			}
+			if(!(str.charAt(j)>='a' && str.charAt(j)<='z'))
+			{
+				j--;
+				continue;
+			}
+			if(str.charAt(i)==str.charAt(j))
+			{
+				ansCount++;
+				i++;
+				j--;
+			}
+			
+		}
+		
+		if(ansCount==count/2)
+		{
+			System.out.println("palindrome");
+		}
+		else
+		{
+			System.out.println("not a palindrome");
+		}
+		
+	}
+}
