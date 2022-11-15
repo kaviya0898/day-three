@@ -1,0 +1,18 @@
+int []arr= {1, 2, 4, 3, 5, 6};
+		int k=7;
+		ArrayList<Integer> list=new ArrayList<>();
+		HashSet<Integer> set=new HashSet<>();
+		for(int i=0;i<arr.length;i++)
+		{
+			list.add(arr[i]);
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if((list.contains(k-arr[i]))&&(!set.contains(list.get(i))) && (!set.contains(k-arr[i])))
+			{
+				int kj=k-arr[i];
+				set.add(kj);
+				set.add(list.get(i));
+				System.out.println("("+list.get(i)+","+kj+")");
+			}
+		}
