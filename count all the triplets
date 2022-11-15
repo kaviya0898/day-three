@@ -1,0 +1,25 @@
+public static void main(String[] args) {
+		int arr[] = {2, 3, 4,7};
+		ArrayList<Integer> list=new ArrayList<>();
+		int i=0,j=arr.length-1;
+		int count=0;
+		for(int k=0;k<arr.length;k++)
+		{
+			list.add(arr[k]);
+		}
+		while(i<=j)
+		{
+			if((i==j) && (i<arr.length-2))
+			{
+				i++;
+				j=arr.length-1;
+				continue;
+			}
+			else if(list.contains(arr[i]+arr[j]))
+			{
+				count++;
+				
+			}
+			j--;
+		}
+		System.out.println(count);
