@@ -1,0 +1,51 @@
+package practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class seven {
+public static ArrayList<String> permutate(String result,String string)
+{
+	if(string.isEmpty())
+	{
+		ArrayList<String> temp=new ArrayList<>();
+		temp.add(result);
+		return temp;
+	}
+	char c=string.charAt(0);
+	ArrayList<String> finalResult=new ArrayList<>();
+	for(int i=0;i<=result.length();i++)
+	{
+		String first=result.substring(0,i);
+		String second=result.substring(i,result.length());
+		finalResult.addAll(permutate(first+c+second,string.substring(1)));
+	}
+	return finalResult;
+}
+	public static void main(String[] args) {
+     int []arr= {3, 30, 34, 5, 9};
+   String str="";
+     for(int i=0;i<arr.length;i++)
+     {
+    	 str+=arr[i];
+     }
+     ArrayList<String> number=permutate("",str);
+     long max=0;
+     long number1=0;
+    for(int i=0;i<number.size();i++)
+    {
+    	 number1=Integer.parseInt(number.get(i));
+    	if(max<number1)
+    	{
+    		max=number1;
+    	}
+    }
+    System.out.println(max);
+	}
+}
